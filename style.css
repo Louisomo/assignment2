@@ -103,55 +103,76 @@ button {
 /*------ Header ------*/
 header {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   padding: 3rem 5rem;
+  background-color: #ffffff;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
 }
+
 nav a {
   font-size: var(--heading-font-size-4);
   text-decoration: none;
 }
+
 nav a#logo {
-  color: var(black-shade-1: #232323;);
+  color: #ffffff;
   font-weight: 700;
 }
+
 nav ul a {
-  color: var(--white-shade-1);
+  color: #ffffff;
 }
 
 /*-- SideMenu --*/
 #ham-menu {
   display: none;
 }
+
 nav ul.active {
+  position: fixed;
+  top: 0;
   left: 0;
+  width: 100%;
 }
+
 /*-- Sticky Header --*/
 .sticky {
-  background-color: var(--white-shade-1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
   box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.05);
 }
+
 .sticky nav ul a,
 .sticky nav a#logo,
 .sticky #ham-menu {
-  color: var(--black-shade-1);
+  color: #000000;
 }
+
 /*-- Link Hover Effect --*/
 nav ul a:hover {
-  color: var(--black-shade-1);
+  color: #000000;
 }
+
 .sticky nav ul a:hover {
-  color: var(--base-shade-1);
+  color: #232323;
 }
+
 /*------ Section: Hero ------*/
 .hero {
   position: relative;
@@ -278,6 +299,42 @@ nav ul a:hover {
   margin-bottom: 10px;
 }
 
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 768px) {
+  .container2 {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+  }
+
+  .item2 {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    order: 2;
+  }
+
+  .item2 h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .item2 p {
+    font-size: 24px;
+  }
+
+  .image-container {
+    flex-basis: 100%;
+    margin-top: 20px;
+    order: 1;
+  }
+
+  .image-container img {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
 /* Clearfix */
 .container2::after {
   content: "";
@@ -285,52 +342,85 @@ nav ul a:hover {
   clear: both;
 }
 
-/* Styling for the product section */
-#product {
+/* Product section */
+.product {
+  padding: 10px;
+  text-align: center;
   background-color: #f2f2f2;
-  padding: 50px;
 }
 
-#product h2 {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 20px;
+/* Create a row for the columns */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-#product p {
-  font-size: 18px;
-  line-height: 1.5;
-  margin-bottom: 30px;
-}
-
-/* Styling for the columns */
+/* Style the columns */
 .column {
-  width: 50%;
-  float: left;
+  flex: 1;
+  max-width: 100%;
   padding: 0 10px;
-  box-sizing: border-box;
 }
 
-/* Clearfix for the rows */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* Styling for the column headings */
-.column h3 {
-  font-size: 24px;
+/* Style the headings */
+h3 {
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-top: 0;
 }
 
-/* Styling for the column images */
-.column img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+/* Style the paragraphs */
+p {
+  font-size: 16px;
+  line-height: 1.5;
 }
+
+/* Style the images */
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Style the buttons */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #2d0fef;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .column {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
 /*------ Section: Testimonials ------*/
 .testimonial h2,
 .testimonial .section-desc {
